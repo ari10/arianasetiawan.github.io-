@@ -1,77 +1,581 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariana Setiawan | Web Developer</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ariana Setiawan | Fullstack Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f6fa;
+color:#333;
+transition:0.3s;
+}
+
+/* DARK MODE */
+
+body.dark{
+background:#0f172a;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000;
+}
+
+body.dark nav{
+background:#1e293b;
+}
+
+nav h2{
+color:#4f46e5;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+body.dark nav ul li a{
+color:white;
+}
+
+.toggle{
+cursor:pointer;
+font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#4f46e5,#6366f1);
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+animation:fadeUp 1s ease;
+}
+
+.hero p{
+font-size:20px;
+opacity:0.9;
+animation:fadeUp 1.5s ease;
+}
+
+/* SECTION */
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+}
+
+/* ABOUT */
+
+.about{
+text-align:center;
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+/* SKILLS */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.skill{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+body.dark .skill{
+background:#1e293b;
+}
+
+.skill:hover{
+transform:translateY(-5px);
+}
+
+.skill i{
+font-size:35px;
+margin-bottom:10px;
+color:#4f46e5;
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.project{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+body.dark .project{
+background:#1e293b;
+}
+
+.project:hover{
+transform:translateY(-5px);
+}
+
+.project h3{
+color:#4f46e5;
+margin-bottom:10px;
+}
+
+.project a{
+text-decoration:none;
+color:#4f46e5;
+font-weight:600;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+color:#4f46e5;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#111827;
+color:white;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+0%{
+opacity:0;
+transform:translateY(20px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- HERO -->
-<header class="hero">
-    <h1>Ariana Setiawan</h1>
-    <p>Web Developer | Backend Developer</p>
-</header>
+<nav>
+<h2>Ariana</h2>
 
-<!-- ABOUT -->
-<section class="section">
-    <h2>About Me</h2>
-    <p class="about-text">
-        Saya adalah Web Developer dengan pengalaman lebih dari 4 tahun
-        dalam pengembangan dan maintenance aplikasi website menggunakan
-        <strong>PHP, Laravel, dan CodeIgniter</strong>.
-        Terbiasa menangani backend system, database, dan pengembangan fitur.
-    </p>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="toggle" onclick="toggleDark()">
+<i class="fa-solid fa-moon"></i>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<h1>Ariana Setiawan</h1>
+<p>Fullstack Developer | Backend Engineer</p>
+
 </section>
 
-<!-- SKILLS -->
-<section class="section">
-    <h2>Skills</h2>
-    <div class="grid">
-        <div class="card">PHP, Laravel, CodeIgniter</div>
-        <div class="card">HTML, CSS, Bootstrap</div>
-        <div class="card">MySQL, PostgreSQL, Oracle</div>
-        <div class="card">Web Development & Maintenance</div>
-        <div class="card">IT Support & Troubleshooting</div>
-    </div>
+<section class="section" id="about">
+
+<h2>About Me</h2>
+
+<p class="about">
+
+Web Developer dengan pengalaman lebih dari <strong>4 tahun</strong> dalam
+pengembangan aplikasi web menggunakan <strong>PHP, Laravel, CodeIgniter</strong>.
+Berpengalaman dalam membangun REST API, manajemen database,
+pengembangan fitur baru, debugging, dan maintenance sistem produksi.
+
+Saat ini juga aktif mengembangkan aplikasi fullstack menggunakan
+<strong>Vue.js dan Node.js</strong> serta membangun berbagai project
+portfolio di GitHub.
+
+</p>
+
 </section>
 
-<!-- PROJECTS -->
-<section class="section">
-    <h2>Projects</h2>
+<section class="section" id="skills">
 
-    <div class="project-card">
-        <h3>Sistem Absensi Dosen & Mahasiswa</h3>
-        <p>Web-based system menggunakan PHP & MySQL.</p>
-    </div>
+<h2>Tech Stack</h2>
 
-    <div class="project-card">
-        <h3>Website Legalitas Perusahaan</h3>
-        <p>Maintenance dan pengembangan fitur website perusahaan.</p>
-    </div>
+<div class="skills">
 
-    <div class="project-card">
-        <h3>Aplikasi Website Kampus</h3>
-        <p>Pengembangan dan maintenance aplikasi internal kampus.</p>
-    </div>
+<div class="skill">
+<i class="fa-brands fa-php"></i>
+<p>PHP</p>
+</div>
+
+<div class="skill">
+<i class="fa-brands fa-laravel"></i>
+<p>Laravel</p>
+</div>
+
+<div class="skill">
+<i class="fa-brands fa-vuejs"></i>
+<p>Vue.js</p>
+</div>
+
+<div class="skill">
+<i class="fa-brands fa-js"></i>
+<p>JavaScript</p>
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-database"></i>
+<p>MySQL</p>
+</div>
+
+<div class="skill">
+<i class="fa-brands fa-node"></i>
+<p>Node.js</p>
+</div>
+
+<div class="skill">
+<i class="fa-brands fa-git-alt"></i>
+<p>Git</p>
+</div>
+
+<div class="skill">
+<i class="fa-brands fa-github"></i>
+<p>GitHub</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- CONTACT -->
-<section class="section contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ari.cooles@gmail.com">ari.cooles@gmail.com</a></p>
-    <p>Phone: 0895-0519-1519</p>
-    <p>LinkedIn: 
-        <a href="https://www.linkedin.com/in/ari-ana-a820a215b/" target="_blank">
-            View Profile
-        </a>
-    </p>
+<section class="section" id="projects">
+
+<h2>Portfolio Projects</h2>
+
+<div class="projects">
+
+<!-- TODO APP -->
+
+<div class="project">
+<h3>Fullstack Todo Application</h3>
+
+<p>
+A fullstack task management application built using 
+<strong>Vue.js, Node.js (Express), and MySQL</strong>. 
+The system allows users to manage tasks efficiently with authentication
+and real-time deadline tracking.
+</p>
+
+<ul>
+<li>User authentication with JWT</li>
+<li>Create, update, delete tasks</li>
+<li>Deadline countdown timer</li>
+<li>Progress tracking & overdue detection</li>
+<li>Task filtering (All / Completed / Overdue)</li>
+</ul>
+
+<p><strong>Tech Stack:</strong> Vue.js, Node.js, Express, MySQL, JWT</p>
+
+<a href="https://github.com/ari10/todo-vue" target="_blank">
+View GitHub Repository
+</a>
+
+</div>
+
+
+<!-- AUTH SYSTEM -->
+
+<div class="project">
+<h3>Fullstack Authentication System</h3>
+
+<p>
+A complete authentication system demonstrating secure login and 
+registration flow between frontend and backend using modern 
+authentication practices.
+</p>
+
+<ul>
+<li>User registration & login</li>
+<li>JWT token authentication</li>
+<li>Protected routes</li>
+<li>Secure password handling</li>
+<li>API communication between frontend and backend</li>
+</ul>
+
+<p><strong>Tech Stack:</strong> Vue.js, Node.js, Express, JWT</p>
+
+<a href="https://github.com/ari10/frontend-fullstack-authentication-system" target="_blank">
+View GitHub Repository
+</a>
+
+</div>
+
+
+<!-- LOGIN API -->
+
+<div class="project">
+<h3>Backend Login API</h3>
+
+<p>
+A REST API backend focused on authentication services including 
+login validation, token generation, and middleware protection 
+for secure API endpoints.
+</p>
+
+<ul>
+<li>REST API authentication</li>
+<li>JWT token generation</li>
+<li>Middleware authorization</li>
+<li>User session validation</li>
+<li>Secure endpoint protection</li>
+</ul>
+
+<p><strong>Tech Stack:</strong> Node.js, Express, JWT</p>
+
+<a href="https://github.com/ari10/backend-api-login" target="_blank">
+View GitHub Repository
+</a>
+
+</div>
+
+
+<!-- SAAS -->
+
+<div class="project">
+<h3>Mini SaaS Platform</h3>
+
+<p>
+A prototype SaaS-style web application architecture designed to 
+simulate modular service architecture between frontend dashboard 
+and backend API services.
+</p>
+
+<ul>
+<li>Authentication system</li>
+<li>Dashboard UI</li>
+<li>Modular backend architecture</li>
+<li>REST API communication</li>
+<li>Scalable application structure</li>
+</ul>
+
+<p><strong>Tech Stack:</strong> Vue.js, Node.js, REST API</p>
+
+<a href="https://github.com/ari10/backend-miniSaaS" target="_blank">
+Backend Repository
+</a>
+
+<br>
+
+<a href="https://github.com/ari10/frontend-miniSaaS" target="_blank">
+Frontend Repository
+</a>
+
+</div>
+
+
+<!-- CMS -->
+
+<div class="project">
+<h3>Portfolio CMS System</h3>
+
+<p>
+A custom CMS system that allows users to manage website content 
+through an admin interface connected to a backend API.
+</p>
+
+<ul>
+<li>Content management system</li>
+<li>CRUD content operations</li>
+<li>API-based architecture</li>
+<li>Admin dashboard interface</li>
+<li>Frontend-backend communication</li>
+</ul>
+
+<p><strong>Tech Stack:</strong> Node.js, Vue.js, REST API</p>
+
+<a href="https://github.com/ari10/portfolio-cms-backend" target="_blank">
+Backend Repository
+</a>
+
+<br>
+
+<a href="https://github.com/ari10/frontend-cms" target="_blank">
+Frontend Repository
+</a>
+
+</div>
+
+
+<!-- KOTLIN -->
+
+<div class="project">
+<h3>Kotlin Backend API</h3>
+
+<p>
+A backend REST API project built using Kotlin to explore modern 
+backend architecture and object-oriented programming practices.
+</p>
+
+<ul>
+<li>REST API routing</li>
+<li>OOP architecture</li>
+<li>Request & response handling</li>
+<li>Backend service structure</li>
+</ul>
+
+<p><strong>Tech Stack:</strong> Kotlin</p>
+
+<a href="https://github.com/ari10/simple-kotlin-backend-api" target="_blank">
+View GitHub Repository
+</a>
+
+</div>
+
+
+<!-- MEJA -->
+
+<div class="project">
+<h3>Restaurant Table Management System</h3>
+
+<p>
+A fullstack web application designed to manage restaurant tables, 
+including CRUD operations for table management and frontend 
+dashboard interface.
+</p>
+
+<ul>
+<li>Table management CRUD</li>
+<li>Frontend dashboard UI</li>
+<li>Backend API services</li>
+<li>Data management system</li>
+</ul>
+
+<p><strong>Tech Stack:</strong> Node.js, Vue.js</p>
+
+<a href="https://github.com/ari10/backend-meja" target="_blank">
+Backend Repository
+</a>
+
+<br>
+
+<a href="https://github.com/ari10/frontend-meja" target="_blank">
+Frontend Repository
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section contact" id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: <a href="mailto:ari.cooles@gmail.com">ari.cooles@gmail.com</a></p>
+<p>Phone: 089505191519</p>
+
+<p>
+LinkedIn:
+<a href="https://www.linkedin.com/in/ari-ana-a820a215b/" target="_blank">
+linkedin.com/in/ari-ana
+</a>
+</p>
+
+<p>
+GitHub:
+<a href="https://github.com/ari10" target="_blank">
+github.com/ari10
+</a>
+</p>
+
 </section>
 
 <footer>
-    <p>© 2025 Ariana Setiawan | Web Developer</p>
+
+<p>© 2025 Ariana Setiawan</p>
+
 </footer>
+
+<script>
+
+function toggleDark(){
+document.body.classList.toggle("dark")
+}
+
+</script>
 
 </body>
 </html>
